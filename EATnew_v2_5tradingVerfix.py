@@ -559,7 +559,7 @@ while True:
                     text = 'Before trade: ' + str(beforetrade) + '\n' + 'sellnum: ' + str(sellnum)
                     title = 'P-SELL'
                     mail(text,title)
-                if LP == True and STARTtime + (datetime(1,1,1,9,30) - datetime(1,1,1,9)) > datetime.now() and STARTtime + (datetime(1,1,1,9,15) - datetime(1,1,1,9)) <= datetime.now() and ls_oclo[CorrectTime] < ls_oclo[CorrectTime]:
+                if LP == True and STARTtime + (datetime(1,1,1,9,30) - datetime(1,1,1,9)) > datetime.now() and STARTtime + (datetime(1,1,1,9,15) - datetime(1,1,1,9)) <= datetime.now() and ls_oclo[CorrectTime] < ls_oclo[CorrectTime-1]:
                     LP = False 
                     sellbit(PN)
                     sellnum = getcurrent()
@@ -568,7 +568,7 @@ while True:
                     text = 'After trade: ' + str(aftertrade) + '\n' + 'sellnum: ' + str(sellnum) + '\n' + 'Profit: ' + str(aftertrade/beforetrade)
                     title = 'BD-S'
                     mail(text,title)
-                if SP == True and STARTtime + (datetime(1,1,1,9,30) - datetime(1,1,1,9)) > datetime.now() and STARTtime + (datetime(1,1,1,9,15) - datetime(1,1,1,9)) <= datetime.now() and ls_ochi[CorrectTime] > ls_ochi[CorrectTime]:
+                if SP == True and STARTtime + (datetime(1,1,1,9,30) - datetime(1,1,1,9)) > datetime.now() and STARTtime + (datetime(1,1,1,9,15) - datetime(1,1,1,9)) <= datetime.now() and ls_ochi[CorrectTime] > ls_ochi[CorrectTime-1]:
                     SP = False
                     buybit(PN)
                     buynum = getcurrent()
